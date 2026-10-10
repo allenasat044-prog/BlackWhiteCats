@@ -1,0 +1,25 @@
+{
+  "interval_seconds": 30,
+  "warn_pct": 80,
+  "crit_pct": 90,
+  "inode_warn_pct": 80,
+  "inode_crit_pct": 90,
+  "days_to_full_warn": 14,
+  "days_to_full_crit": 3,
+  "history_days": 30,
+  "growth_window_hours": 24,
+  "min_samples": 3,
+  "min_span_seconds": 60,
+  "du_every_seconds": 600,
+  "du_timeout_seconds": 90,
+  "top_dirs": 8,
+  "include_tmpfs": false,
+  "exclude_mount_prefixes": ["/proc", "/sys", "/dev", "/run", "/snap", "/var/lib/docker/", "/var/lib/kubelet/"],
+  "alerts": {
+    "reminder_minutes": 60,
+    "log_file": true,
+    "syslog": true,
+    "webhook": { "enabled": false, "url": "" },
+    "command": { "enabled": false, "run": "echo \"$ALERT_STATE $ALERT_LEVEL $ALERT_MESSAGE\" | mail -s \"Storage alert\" admin@example.com" }
+  }
+}
